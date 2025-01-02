@@ -58,17 +58,20 @@ crypto.subtle.digest('SHA-256', encodedNonce).then((hashBuffer) => {
 supabase.auth.signInWithOAuth({
   provider: 'google',
 })
+require('dotenv').config();
 
 google.accounts.id.initialize({
-  client_id: "process.env.GOOGLE_CLIENT_ID",
-  client_secret: "process.env.GOOGLE_CLIENT_SECRET",
+  client_id: process.env.GOOGLE_CLIENT_ID, 
+  client_secret: process.env.GOOGLE_CLIENT_SECRET, 
   callback: handleCredentialResponse,
 });
 
-require('dotenv').config();
-require('dotenv').config();
 const googleClientId = process.env.GOOGLE_CLIENT_ID;
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
+const apiKey = process.env.API_KEY;
+
+
+console.log('AIzaSyAnlL27Yp29G-H9Y2OK1loKB6Em7AvWUtc', apiKey);
 
 await supabase.auth.signInWithOAuth({
   provider,
