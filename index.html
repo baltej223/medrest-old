@@ -60,9 +60,12 @@ supabase.auth.signInWithOAuth({
 })
 
 google.accounts.id.initialize({
-  client_id: "804229670721-cc2c05umqipf979cqdmig4tvh6g75q21.apps.googleusercontent.com",
+  client_id: "process.env.GOOGLE_CLIENT_ID",
   callback: handleCredentialResponse,
 });
+
+require('dotenv').config();
+const googleClientId = process.env.GOOGLE_CLIENT_ID;
 
 
 await supabase.auth.signInWithOAuth({
