@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div
+  <!-- <div
   id="g_id_onload"
   data-client_id="<client ID>"
   data-context="signin"
@@ -29,9 +29,10 @@
   data-text="signin_with"
   data-size="large"
   data-logo_alignment="left"
-></div>
+></div> -->
 
   <div id="root"></div>
+<!--   
   <script src="https://accounts.google.com/gsi/client" async></script>
   <script>
   async function handleSignInWithGoogle(response) {
@@ -81,8 +82,8 @@ await supabase.auth.signInWithOAuth({
 })
 
   </script>
+  <script src="https://accounts.google.com/gsi/client" async></script> -->
   <script type="module" src="/src/main.tsx"></script>
-  <script src="https://accounts.google.com/gsi/client" async></script>
 </body>
 
 </html>
