@@ -61,12 +61,14 @@ supabase.auth.signInWithOAuth({
 
 google.accounts.id.initialize({
   client_id: "process.env.GOOGLE_CLIENT_ID",
+  client_secret: "process.env.GOOGLE_CLIENT_SECRET",
   callback: handleCredentialResponse,
 });
 
 require('dotenv').config();
+require('dotenv').config();
 const googleClientId = process.env.GOOGLE_CLIENT_ID;
-
+const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
 await supabase.auth.signInWithOAuth({
   provider,
