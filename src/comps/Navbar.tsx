@@ -14,10 +14,11 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "Dashboard", href: "/" },
+  { name: "Appointments", href: "/appointments" },
+  { name: "IPD", href: "/ipd" },
+  { name: "Inventory", href: "/inventory" },
+  { name: "Prescriptions", href: "/inventory" },
 ]
 
 export function Navbar() {
@@ -28,7 +29,8 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="h-6 w-6 rounded-full bg-primary" />
+            <span className="h-6 w-6 rounded-full bg-primary">
+            </span>
             <span className="font-bold">MedREST</span>
           </Link>
           <Separator orientation="vertical" className="mx-4 h-6 hidden md:flex" />
@@ -45,9 +47,6 @@ export function Navbar() {
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="hidden md:flex pri">
-            Sign In
-          </Button>
           <Button className="hidden md:flex secondary">Get Started</Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -73,9 +72,7 @@ export function Navbar() {
                     {item.name}
                   </Link>
                 ))}
-                <Link href="/signin" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-lg">
-                  Sign In
-                </Link>
+
                 <Link href="/get-started" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-lg">
                   Get Started
                 </Link>
